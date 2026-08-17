@@ -1,5 +1,5 @@
-<mxfile host="app.diagrams.net">
-  <diagram name="Página-1" id="E8-e0XnEDsILR1S4ENzG">
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Nível 1 - Contexto" id="E8-e0XnEDsILR1S4ENzG">
     <mxGraphModel dx="764" dy="462" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -38,6 +38,14 @@
         <mxCell id="BDtEgcUCTd9ZhTTHA7zW-11" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#FFFFFF,#FFFFFF);fontColor=light-dark(#000000,#1168BD);" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; font-weight: 700; text-align: start; white-space: pre-wrap;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Legenda&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;li class=&quot;paragraph list-item normal ng-star-inserted&quot; style=&quot;font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 16px; line-height: 1.5rem; font-family: &amp;quot;Google Sans Text&amp;quot;; margin-block-end: 8px;&quot;&gt;&lt;span class=&quot;ng-star-inserted&quot;&gt;Azul claro = Usuário.&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;paragraph list-item normal ng-star-inserted&quot; style=&quot;font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 16px; line-height: 1.5rem; font-family: &amp;quot;Google Sans Text&amp;quot;; margin-block-end: 8px;&quot;&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: light-dark(rgb(0, 0, 0), rgb(8, 63, 117));&quot;&gt;Azul marinho = Sistema em Escopo.&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;paragraph list-item normal ng-star-inserted&quot; style=&quot;font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 16px; line-height: 1.5rem; font-family: &amp;quot;Google Sans Text&amp;quot;; margin-block-end: 8px;&quot;&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: light-dark(rgb(0, 0, 0), rgb(153, 153, 153));&quot;&gt;Cinza = Sistema Externo/Legado.&lt;/span&gt;&lt;/li&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="230" width="230" x="60" y="410" as="geometry" />
         </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5Yu4tswJDWn4Z4PH7bFz" name="Nível 2 - Containers">
+    <mxGraphModel dx="764" dy="462" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
