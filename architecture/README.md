@@ -1,1 +1,10 @@
+# Architecture - C4 Model
+
+## Level 1: Context Diagram
+Este diagrama apresenta a visão de sistema do **Resilient Ledger System**, detalhando suas fronteiras, os principais atores (Comerciante) e as integrações externas estratégicas (ERP/Legado). O foco aqui é a comunicação de valor e as interações de alto nível sob o protocolo HTTPS.
+
+![Context Diagram](./c4-level1-context.png)
+
+---
+*Nota: Este diagrama segue os padrões do C4 Model para garantir a clareza na comunicação técnica e de negócio exigida pelo desafio.*
 
