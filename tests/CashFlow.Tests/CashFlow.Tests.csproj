@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CashFlow.Lancamentos\CashFlow.Lancamentos.csproj" />
+    <ProjectReference Include="..\..\src\CashFlow.Lancamentos\CashFlow.Lancamentos.csproj" />
   </ItemGroup>
 
 </Project>
