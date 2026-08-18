@@ -8,3 +8,7 @@ Este diagrama apresenta a visão de sistema do **Resilient Ledger System**, deta
 ---
 *Nota: Este diagrama segue os padrões do C4 Model para garantir a clareza na comunicação técnica e de negócio exigida pelo desafio.*
 
+## Level 2: Container Diagram
+Neste nível, "abrimos a caixa" do sistema para detalhar sua estratégia de resiliência. Utilizamos um **API Gateway** para segurança centralizada, **RabbitMQ** para garantir o desacoplamento entre escrita e leitura, e **Persistência Poliglota** (SQL para transações e NoSQL para consultas rápidas).
+
+![Container Diagram](./c4-level2-containers.png)
