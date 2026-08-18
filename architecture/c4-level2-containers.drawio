@@ -1,0 +1,238 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Nível 1 - Contexto" id="E8-e0XnEDsILR1S4ENzG">
+    <mxGraphModel dx="437" dy="264" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object placeholders="1" c4Name="Comerciante (Merchant)" c4Type="Person" c4Description="Usuário final que precisa gerenciar o fluxo de caixa diário&#xa;" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="BDtEgcUCTd9ZhTTHA7zW-1">
+          <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=light-dark(#198CC4,#198CC4);strokeColor=#006EAF;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;labelBackgroundColor=none;fontStyle=1" vertex="1">
+            <mxGeometry height="180" width="200" x="50" y="160" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Resilient Ledger System" c4Type="Software System" c4Description="Permite ao comerciante gerenciar lançamentos financeiros e visualizar saldos consolidados com alta disponibilidade." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="BDtEgcUCTd9ZhTTHA7zW-2">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=light-dark(#1061B0,#083F75);fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;arcSize=10;strokeColor=light-dark(#0D5091,#083F75);metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="490" y="190" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="ERP / Sistema Contábil" c4Type="Software System" c4Description="Sistema legado da organização que consome dados consolidados para fins contábeis e fiscais." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="BDtEgcUCTd9ZhTTHA7zW-4">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=light-dark(#1061B0,#999999);fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;arcSize=10;strokeColor=light-dark(#0D5091,#000000);metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="940" y="190" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="BDtEgcUCTd9ZhTTHA7zW-7" edge="1" parent="1" source="BDtEgcUCTd9ZhTTHA7zW-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="BDtEgcUCTd9ZhTTHA7zW-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BDtEgcUCTd9ZhTTHA7zW-8" connectable="0" parent="BDtEgcUCTd9ZhTTHA7zW-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;Registra lançamentos e consulta saldos&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;&lt;span style=&quot;color: rgb(48, 48, 48); background-color: rgb(242, 242, 242);&quot;&gt;[HTTPS]&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.3125" y="-3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDtEgcUCTd9ZhTTHA7zW-9" edge="1" parent="1" source="BDtEgcUCTd9ZhTTHA7zW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="BDtEgcUCTd9ZhTTHA7zW-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BDtEgcUCTd9ZhTTHA7zW-10" connectable="0" parent="BDtEgcUCTd9ZhTTHA7zW-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; color: rgb(48, 48, 48); background: none 0% 0% / auto repeat scroll padding-box border-box rgb(242, 242, 242); padding: 0.25rem; text-align: start; white-space: pre-wrap;&quot;&gt;Envia dados consolidados para fechamento&lt;/code&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;. &lt;/span&gt;&lt;div&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; background-color: rgb(242, 242, 242);&quot;&gt;[JSON/HTTPS&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1" y="-4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDtEgcUCTd9ZhTTHA7zW-11" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=light-dark(#FFFFFF,#FFFFFF);fontColor=light-dark(#000000,#1168BD);" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; font-weight: 700; text-align: start; white-space: pre-wrap;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;Legenda&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;li class=&quot;paragraph list-item normal ng-star-inserted&quot; style=&quot;font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 16px; line-height: 1.5rem; font-family: &amp;quot;Google Sans Text&amp;quot;; margin-block-end: 8px;&quot;&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: light-dark(rgb(25, 140, 196), rgb(25, 140, 196));&quot;&gt;&lt;span&gt;Azul claro&lt;/span&gt; = Usuário.&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;paragraph list-item normal ng-star-inserted&quot; style=&quot;font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 16px; line-height: 1.5rem; font-family: &amp;quot;Google Sans Text&amp;quot;; margin-block-end: 8px;&quot;&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: light-dark(rgb(0, 0, 0), rgb(8, 63, 117));&quot;&gt;Azul marinho = Sistema em Escopo.&lt;/span&gt;&lt;/li&gt;&lt;li class=&quot;paragraph list-item normal ng-star-inserted&quot; style=&quot;font-style: normal; font-variant: normal; font-size-adjust: none; font-language-override: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 16px; line-height: 1.5rem; font-family: &amp;quot;Google Sans Text&amp;quot;; margin-block-end: 8px;&quot;&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: light-dark(rgb(0, 0, 0), rgb(153, 153, 153));&quot;&gt;Cinza = Sistema Externo/Legado.&lt;/span&gt;&lt;/li&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="230" x="60" y="410" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5Yu4tswJDWn4Z4PH7bFz" name="Nível 2 - Containers">
+    <mxGraphModel dx="3569" dy="1102" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vylyf0eo7cqaCFoFQAcL-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;fillColor=default;" value="" vertex="1">
+          <mxGeometry height="1080" width="942" x="68" y="89" as="geometry" />
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-4" edge="1" parent="1" source="vylyf0eo7cqaCFoFQAcL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vylyf0eo7cqaCFoFQAcL-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-7" connectable="0" parent="5MnOcLDg6kVTpUKWiV0Y-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&#xa;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(242, 242, 242); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Persiste transações financeiras [SQL]&lt;/span&gt;&#xa;&#xa;" vertex="1">
+          <mxGeometry relative="1" x="-0.0238" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-5" edge="1" parent="1" source="vylyf0eo7cqaCFoFQAcL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" target="vylyf0eo7cqaCFoFQAcL-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-6" connectable="0" parent="5MnOcLDg6kVTpUKWiV0Y-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&#xa;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(242, 242, 242); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Publica evento de novo lançamento [AMQP]&lt;/span&gt;&#xa;&#xa;" vertex="1">
+          <mxGeometry relative="1" x="-0.4742" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="API de Lançamentos" c4Type="Container" c4Technology=".NET 8 API" c4Description="Recebe e valida os lançamentos de débito e crédito, garantindo a integridade dos dados." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="vylyf0eo7cqaCFoFQAcL-1">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=light-dark(#083F75,#083F75);fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="178" y="382" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-8" edge="1" parent="1" source="vylyf0eo7cqaCFoFQAcL-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vylyf0eo7cqaCFoFQAcL-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-9" connectable="0" parent="5MnOcLDg6kVTpUKWiV0Y-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&#xa;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 500; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: pre-wrap; background-color: rgb(242, 242, 242); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Lê/Grava saldos consolidados [NoSQL]&lt;/span&gt;&#xa;&#xa;" vertex="1">
+          <mxGeometry relative="1" x="0.1304" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="API de Consolidado" c4Type="Container" c4Technology=".NET 8 API" c4Description="Provê relatórios de saldo diário com alta performance (suporte a 50 req/s)" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="vylyf0eo7cqaCFoFQAcL-2">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=light-dark(#083F75,#083F75);fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="734" y="391" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="RabbitMQ (Message Broker)" c4Type="Container" c4Technology="Message Broker" c4Description="Canal de comunicação assíncrona que garante o desacoplamento e a resiliência entre os serviços" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="vylyf0eo7cqaCFoFQAcL-5">
+          <mxCell parent="1" style="shape=cylinder3;size=15;direction=south;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=light-dark(#198CC4,#1B21C4);fontSize=12;fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="454" y="647" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="DB Lançamentos" c4Type="Container" c4Technology="SQL Server" c4Description="Armazena os lançamentos financeiros com garantia de transações ACID." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="vylyf0eo7cqaCFoFQAcL-6">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=light-dark(#083F75,#083F75);fontSize=12;fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="176" y="811" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="DB Consolidado" c4Type="Container" c4Technology="MongoDB" c4Description="Banco NoSQL otimizado para leitura rápida dos saldos já consolidados." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%:&amp;nbsp;%c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="vylyf0eo7cqaCFoFQAcL-7">
+          <mxCell parent="1" style="shape=cylinder3;size=15;whiteSpace=wrap;html=1;boundedLbl=1;rounded=0;labelBackgroundColor=none;fillColor=light-dark(#083F75,#083F75);fontSize=12;fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;strokeColor=#0E7DAD;metaEdit=1;points=[[0.5,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.5,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];resizable=0;fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="734" y="811" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Comerciante (Merchant)" c4Type="Person" c4Description="Usuário final que precisa gerenciar o fluxo de caixa diário&#xa;" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="695PdRg86oTb3AinG85u-1">
+          <mxCell parent="1" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=light-dark(#198CC4,#198CC4);strokeColor=light-dark(#06315C,#083F75);fontColor=light-dark(#000000,#FFFFFF);shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;labelBackgroundColor=none;fontStyle=1" vertex="1">
+            <mxGeometry height="180" width="200" x="-513" y="66" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="jc5aQPLtGGrDdEAkWNVU-2" edge="1" parent="1" source="695PdRg86oTb3AinG85u-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;" target="gHlzwMDIcAGMRU4araY6-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-250" y="200" />
+            </Array>
+            <mxPoint x="-60" y="300" as="sourcePoint" />
+            <mxPoint x="491.1199999999999" y="329.31999999999994" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jc5aQPLtGGrDdEAkWNVU-4" connectable="0" parent="jc5aQPLtGGrDdEAkWNVU-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;Registra lançamentos / Consulta saldo&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt; &lt;/span&gt;&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; color: rgb(48, 48, 48); background: none 0% 0% / auto repeat scroll padding-box border-box rgb(242, 242, 242); padding: 0.25rem; text-align: start; white-space: pre-wrap;&quot;&gt;[HTTPS/JSON + JWT/OAuth2]&lt;/code&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4769" y="-5" as="geometry">
+            <mxPoint x="13" y="-26" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="ERP / Sistema Contábil" c4Type="Software System" c4Description="Sistema legado da organização que consome dados consolidados para fins contábeis e fiscais." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="5MnOcLDg6kVTpUKWiV0Y-1">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=light-dark(#999999,#999999);fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;arcSize=10;strokeColor=light-dark(#0D5091,#000000);metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="1216" y="79" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-2" edge="1" parent="1" source="vylyf0eo7cqaCFoFQAcL-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="5MnOcLDg6kVTpUKWiV0Y-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-3" connectable="0" parent="5MnOcLDg6kVTpUKWiV0Y-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;Envia dados para fechamento&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt; [HTTPS/JSON]&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0206" y="-1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-10" edge="1" parent="1" source="vylyf0eo7cqaCFoFQAcL-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;" target="vylyf0eo7cqaCFoFQAcL-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5MnOcLDg6kVTpUKWiV0Y-11" connectable="0" parent="5MnOcLDg6kVTpUKWiV0Y-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;Consome eventos para processamento assíncrono&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt; [AMQP]&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2085" as="geometry">
+            <mxPoint y="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-2" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontSize=16;align=left;verticalAlign=top;fillColor=none;strokeColor=none;fontColor=default;fontStyle=1;spacingLeft=6;spacing=0;resizable=0;labelBackgroundColor=none;" value="Legenda" vertex="1">
+          <mxGeometry height="540" width="180" x="-170" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-3" parent="JJsCgS6PCwUQlErDBo5i-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="80" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-4" parent="JJsCgS6PCwUQlErDBo5i-3" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=light-dark(#198CC4,#198CC4);top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=#FFFFFF;gradientColor=none;spacingLeft=10;spacingRight=4;" value="&lt;b&gt;&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;white-space: pre-wrap; background-image: none; background-position: 0% 0%; background-size: auto; background-repeat: repeat; background-attachment: scroll; background-origin: padding-box; background-clip: border-box; font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; color: rgb(48, 48, 48); padding: 0.25rem;&quot;&gt;Pessoa / Ator&lt;/code&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;white-space: pre-wrap; color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px;&quot;&gt; – Representa o usuário do sistema (Comerciante)&lt;/span&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="180" as="geometry">
+            <mxRectangle height="80" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-5" parent="JJsCgS6PCwUQlErDBo5i-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="100" width="180" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-6" parent="JJsCgS6PCwUQlErDBo5i-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=light-dark(#1061B0,#083F75);top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=light-dark(#FFFFFF,#FFFFFF);gradientColor=none;spacingLeft=10;spacingRight=4;labelBackgroundColor=none;fontStyle=1" value="&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; background-image: none; background-position: 0% 0%; background-size: auto; background-repeat: repeat; background-attachment: scroll; background-origin: padding-box; background-clip: border-box; padding: 0.25rem; white-space: pre-wrap;&quot;&gt;Software System / Container&lt;/code&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; white-space: pre-wrap;&quot;&gt; – Representa o seu sistema e os componentes internos (APIs e Bancos).&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="180" as="geometry">
+            <mxRectangle height="100" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-7" parent="JJsCgS6PCwUQlErDBo5i-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="90" width="180" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-8" parent="JJsCgS6PCwUQlErDBo5i-7" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=light-dark(#1B21C4,#1B21C4);top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=light-dark(#FFFFFF,#FFFFFF);gradientColor=none;spacingLeft=10;spacingRight=4;labelBackgroundColor=none;fontStyle=1" value="&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; background-image: none; background-position: 0% 0%; background-size: auto; background-repeat: repeat; background-attachment: scroll; background-origin: padding-box; background-clip: border-box; padding: 0.25rem; white-space: pre-wrap;&quot;&gt;Infraestrutura de Suporte&lt;/code&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; white-space: pre-wrap;&quot;&gt; – Representa o RabbitMQ (broker de mensageria)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="90" width="180" as="geometry">
+            <mxRectangle height="90" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-9" parent="JJsCgS6PCwUQlErDBo5i-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="80" width="180" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="JJsCgS6PCwUQlErDBo5i-10" parent="JJsCgS6PCwUQlErDBo5i-9" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=light-dark(#999999,#999999);top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=light-dark(#FFFFFF,#FFFFFF);gradientColor=none;spacingLeft=10;spacingRight=4;labelBackgroundColor=none;fontStyle=1" value="&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; background-image: none; background-position: 0% 0%; background-size: auto; background-repeat: repeat; background-attachment: scroll; background-origin: padding-box; background-clip: border-box; padding: 0.25rem; white-space: pre-wrap;&quot;&gt;Sistema Externo&lt;/code&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; white-space: pre-wrap;&quot;&gt; – Representa o ERP Legado da organização&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="180" as="geometry">
+            <mxRectangle height="80" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gHlzwMDIcAGMRU4araY6-1" parent="JJsCgS6PCwUQlErDBo5i-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=light-dark(#FFFFFF,#000000);points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="80" width="180" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="gHlzwMDIcAGMRU4araY6-2" parent="gHlzwMDIcAGMRU4araY6-1" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=light-dark(#000000,#000000);top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=light-dark(#FFFFFF,#FFFFFF);gradientColor=none;spacingLeft=10;spacingRight=4;labelBackgroundColor=none;fontStyle=1" value="&lt;div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; font-weight: 400; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; font-weight: 400; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;Comunicação Síncrona&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="180" as="geometry">
+            <mxRectangle height="80" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gHlzwMDIcAGMRU4araY6-16" parent="JJsCgS6PCwUQlErDBo5i-2" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=light-dark(#FFFFFF,#000000);points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" value="" vertex="1">
+          <mxGeometry height="80" width="180" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="gHlzwMDIcAGMRU4araY6-17" parent="gHlzwMDIcAGMRU4araY6-16" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=light-dark(#000000,#000000);top=0;left=0;bottom=0;right=0;pointerEvents=1;fontSize=12;align=left;fontColor=light-dark(#FFFFFF,#FFFFFF);gradientColor=none;spacingLeft=10;spacingRight=4;labelBackgroundColor=none;fontStyle=1" value="&lt;div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; font-weight: 400; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; font-weight: 400; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;Comunicação Assíncrona&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="180" as="geometry">
+            <mxRectangle height="80" width="180" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gHlzwMDIcAGMRU4araY6-22" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;endFill=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-160" y="830" as="sourcePoint" />
+            <mxPoint x="-40" y="830" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gHlzwMDIcAGMRU4araY6-23" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;endFill=1;dashed=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-160" y="910" as="sourcePoint" />
+            <mxPoint x="-40" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JnRTToDc5X1Xfh9TMNmF-1" edge="1" parent="1" source="gHlzwMDIcAGMRU4araY6-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vylyf0eo7cqaCFoFQAcL-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="574" y="320" />
+              <mxPoint x="298" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JnRTToDc5X1Xfh9TMNmF-3" connectable="0" parent="JnRTToDc5X1Xfh9TMNmF-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt;Redireciona comando de escrita&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt; &lt;/span&gt;&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; color: rgb(48, 48, 48); background: none 0% 0% / auto repeat scroll padding-box border-box rgb(242, 242, 242); padding: 0.25rem; text-align: start; white-space: pre-wrap;&quot;&gt;[HTTPS/JSON]&lt;/code&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1318" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JnRTToDc5X1Xfh9TMNmF-2" edge="1" parent="1" source="gHlzwMDIcAGMRU4araY6-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vylyf0eo7cqaCFoFQAcL-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="574" y="320" />
+              <mxPoint x="854" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JnRTToDc5X1Xfh9TMNmF-4" connectable="0" parent="JnRTToDc5X1Xfh9TMNmF-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt; Redireciona consulta de leitura&lt;/span&gt;&lt;div&gt;&lt;span class=&quot;ng-star-inserted&quot; style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Text&amp;quot;; font-size: 16px; text-align: start; white-space: pre-wrap; background-color: rgb(255, 255, 255);&quot;&gt; &lt;/span&gt;&lt;code class=&quot;code ng-star-inserted&quot; style=&quot;font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 0.875rem; color: rgb(48, 48, 48); background: none 0% 0% / auto repeat scroll padding-box border-box rgb(242, 242, 242); padding: 0.25rem; text-align: start; white-space: pre-wrap;&quot;&gt;[HTTPS/JSON]&lt;/code&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0673" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="API Gateway" c4Type="Container" c4Technology="Sensedia / Azure API Mgm" c4Description="Para suportar o requisito de 50 requisições por segundo e garantir a segurança centralizada" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;span&gt;%c4Name%&lt;/span&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%: %c4Technology%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font&gt;%c4Description%&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" id="gHlzwMDIcAGMRU4araY6-24">
+          <mxCell parent="1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=light-dark(#23A2D9,#083F75);fontColor=light-dark(#FFFFFF,#FFFFFF);align=center;arcSize=10;strokeColor=#0E7DAD;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];fontStyle=1" vertex="1">
+            <mxGeometry height="120" width="240" x="454" y="140" as="geometry" />
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
