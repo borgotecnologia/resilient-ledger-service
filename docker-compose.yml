@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Simulando Data Center Local (On-premises)
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_local
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=S3cur3P@ssw0rd!
+    networks:
+      - internal_net
+    ports:
+      - "1433:1433"
+
+  # Simulando Cloud Provider
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_cloud
+    networks:
+      - cloud_net
+    ports:
+      - "5672:5672"   # Porta de mensagens
+      - "15672:15672" # Painel administrativo
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_cloud
+    networks:
+      - cloud_net
+    ports:
+      - "27017:27017"
+
+networks:
+  internal_net:
+    driver: bridge
+  cloud_net:
+    driver: bridge
