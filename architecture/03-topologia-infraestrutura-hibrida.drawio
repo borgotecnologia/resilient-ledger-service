@@ -236,7 +236,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="8N2yBkWrlo-TmR5js7ZP" name="Visão Física / Topologia de Deploy">
-    <mxGraphModel dx="1830" dy="462" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2260" dy="660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -345,6 +345,22 @@
         <mxCell id="2X6Vd32t_-tInFcZmf0C-3" connectable="0" parent="2X6Vd32t_-tInFcZmf0C-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;Envia dados para fechamento [HTTPS/JSON]&lt;/span&gt;" vertex="1">
           <mxGeometry relative="1" x="0.6152" y="-3" as="geometry">
             <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gN1C-aChXc-dOVn0ZL2f-1" edge="1" parent="1" source="L9auRckqY5i9NL1kHUT9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" target="8t_efYhQb74KeCA8AQ_4-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gN1C-aChXc-dOVn0ZL2f-5" connectable="0" parent="gN1C-aChXc-dOVn0ZL2f-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;HTTPS/JSON&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2643" y="3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gN1C-aChXc-dOVn0ZL2f-2" edge="1" parent="1" source="L9auRckqY5i9NL1kHUT9-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="8t_efYhQb74KeCA8AQ_4-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gN1C-aChXc-dOVn0ZL2f-3" connectable="0" parent="gN1C-aChXc-dOVn0ZL2f-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgb(48, 48, 48); font-family: &amp;quot;Google Sans Code&amp;quot;; font-size: 14px; text-align: start; white-space: pre-wrap; background-color: rgb(242, 242, 242);&quot;&gt;HTTPS/JSON&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.063" as="geometry">
+            <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
