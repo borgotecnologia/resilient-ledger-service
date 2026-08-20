@@ -1,145 +1,150 @@
-# Guia de Validação Técnica e Funcional de Ponta a Ponta
+# Guia de Validação Técnica e Funcional Ponta a Ponta
 ## Projeto: CashFlow (Resilient Ledger)
 
-Este guia foi elaborado para que qualquer pessoa (mesmo sem conhecimento aprofundado em programação ou arquitetura de sistemas) consiga configurar, executar e validar o teste de fogo das APIs de **Lançamentos** e **Consolidado Diário** de forma totalmente visual e prática.
+Este documento estabelece o roteiro operacional para a homologação, execução e validação funcional das APIs de **Lançamentos** e **Consolidado Diário** que integram o projeto CashFlow. O objetivo é permitir que o comitê de avaliação realize a auditoria técnica da solução em um ambiente controlado, reproduzindo os fluxos transacionais e de resiliência especificados no desafio.
 
 ---
 
-## 📋 Pré-requisitos do Sistema
+## 📋 Requisitos do Ambiente de Execução
 
-Antes de iniciar, certifique-se de que a máquina possui os seguintes softwares instalados:
-1. **Docker Desktop** (com suporte a containers ativado).
-2. **.NET 8 SDK** (para compilar e rodar as APIs).
-3. **VS Code** (ou qualquer terminal de linha de comando de sua preferência).
-4. Um navegador de internet (Google Chrome, Edge, etc.).
+Para a correta execução dos testes e validação das capacidades, certifique-se de que o ambiente dispõe dos seguintes componentes instalados:
+1. **Docker Engine & Docker Compose** (ambiente de containerização de infraestrutura).
+2. **.NET 8 SDK** (compilação e runtime dos microsserviços).
+3. **Navegador Web** (para acesso à interface Swagger de documentação de APIs).
 
 ---
 
-## 🛠️ Passo 1: Subir as Máquinas no Docker (Bancos e Fila)
+## 🛠️ 1. Provisionamento da Infraestrutura Local (Docker)
 
-Nossa solução utiliza três servidores que rodam isolados dentro do Docker. Vamos ligá-los agora:
+O projeto baseia-se em uma arquitetura de serviços desacoplados apoiada por três componentes de infraestrutura containerizados (bancos de dados isolados e mensageria).
 
-1. Abra o seu terminal de comando na **pasta raiz** do projeto (onde está localizado o arquivo `docker-compose.yml`).
-2. Execute o seguinte comando para baixar e ligar os servidores em segundo plano:
+1. Abra o terminal na **pasta raiz** do repositório (onde localiza-se o arquivo `docker-compose.yml`).
+2. Inicialize os serviços em segundo plano:
    ```bash
    docker compose up -d
    ```
-3. Aguarde cerca de 1 a 2 minutos para o Docker concluir o download.
-4. Para garantir que os três servidores estão rodando perfeitamente, execute:
+3. Valide o status de inicialização e saúde dos containers executando:
    ```bash
    docker ps
    ```
-   *Você deverá ver três containers ativos na tabela:*
-   * `sqlserver_local` (porta 1433)
-   * `rabbitmq_cloud` (portas 5672 e 15672)
-   * `mongodb_cloud` (porta 27017)
+   *Certifique-se de que os seguintes serviços encontram-se no status "Up" com suas respectivas portas expostas:*
+   * `sqlserver_local` (Porta: 1433) - Armazenamento relacional transacional (Lançamentos).
+   * `rabbitmq_cloud` (Portas: 5672 e 15672) - Broker de mensageria assíncrona.
+   * `mongodb_cloud` (Porta: 27017) - Repositório NoSQL orientado a documentos (Consolidado).
 
 ---
 
-## 🚀 Passo 2: Iniciar as duas APIs em Paralelo
+## 🚀 2. Inicialização dos Serviços (Microsserviços .NET 8)
 
-Com os servidores ligados, vamos ligar os nossos microsserviços. Você precisará de **dois terminais abertos simultaneamente**:
+Para executar a solução localmente com os caminhos corretos da estrutura padrão do projeto (`src/`), execute as aplicações em **dois terminais distintos**:
 
-### Terminal 1: API de Lançamentos (Escrita / On-Premises)
-1. Navegue até a pasta do projeto de Lançamentos:
+### Terminal 1: Serviço de Lançamentos (Escrita)
+1. Navegue até o diretório do projeto de Lançamentos:
    ```bash
-   cd CashFlow.Lancamentos
+   cd src/CashFlow.Lancamentos
    ```
-2. Execute a aplicação:
+2. Inicialize o runtime da aplicação:
    ```bash
    dotnet run
    ```
-3. **O que observar:** O console compilará o projeto e mostrará a mensagem informando a porta onde ela está ouvindo (ex: `Now listening on: http://localhost:5182`). No primeiro boot, o comando `EnsureCreated()` cria automaticamente a tabela de lançamentos no SQL Server do Docker.
+3. **Comportamento esperado:** O compilador processará a aplicação e disponibilizará o endpoint HTTP local (ex: `Now listening on: http://localhost:5182`). No primeiro ciclo de inicialização (*first boot*), a rotina de carga do banco executa automaticamente a criação de tabelas e a estrutura de dados necessária no SQL Server local.
 
-### Terminal 2: API de Consolidado (Leitura & Consumidor / Cloud)
-1. Abra uma nova aba ou janela de terminal no seu VS Code.
-2. Navegue até a pasta do Consolidado:
+### Terminal 2: Serviço de Consolidado (Leitura & Consumidor de Eventos)
+1. Abra um segundo terminal.
+2. Navegue até o diretório do projeto de Consolidado:
    ```bash
-   cd CashFlow.Consolidado
+   cd src/CashFlow.Consolidado
    ```
-3. Execute a aplicação:
+3. Inicialize o runtime do serviço:
    ```bash
    dotnet run
    ```
-4. **O que observar:** O console informará a porta local do Consolidado (ex: `Now listening on: http://localhost:5254`). O serviço em segundo plano conectará ao RabbitMQ e exibirá que está ativo, aguardando mensagens. Se houver mensagens acumuladas na fila, ele as processará instantaneamente.
+4. **Comportamento esperado:** O serviço inicializará na sua respectiva porta HTTP (ex: `Now listening on: http://localhost:5254`) e registrará o *background consumer* no Broker do RabbitMQ, aguardando eventos de novos lançamentos para processamento assíncrono.
 
 ---
 
-## 🧪 Passo 3: O Teste Prático (Fluxo de Venda de Ponta a Ponta)
+## 🧪 3. Execução de Testes Funcionais (Validação de Negócio)
 
-Agora vamos simular a atividade diária de um comerciante para validar as duas capacidades centrais exigidas no edital.
+Este roteiro reproduz a atividade operacional para validar as capacidades de criação de lançamentos (débito/crédito) e consulta do saldo consolidado diário.
 
-### 1. Criar um Lançamento de Venda (POST)
-1. Abra o navegador e acesse o Swagger da **API de Lançamentos**:
-   👉 URL: `http://localhost:<PORTA_DO_TERMINAL_1>/swagger/index.html` (substitua a porta pelo número que apareceu no Terminal 1, ex: `5182`).
-2. Clique no endpoint **`POST /api/lancamentos`** -> clique no botão **`Try it out`**.
-3. Envie o seguinte JSON para registrar uma venda de **R$ 250,00**:
+### A. Registro de Transação Financeira (POST)
+1. Acesse a interface Swagger da **API de Lançamentos**:
+   👉 URL: `http://localhost:<PORTA_DO_TERMINAL_1>/swagger/index.html` (utilize a porta gerada na inicialização do Terminal 1, por exemplo, `5182`).
+2. Selecione o endpoint **`POST /api/lancamentos`** e clique em **`Try it out`**.
+3. Execute a requisição enviando o seguinte payload JSON para registrar um crédito de **R$ 250,00**:
    ```json
    {
      "valor": 250.00,
      "tipo": "C"
    }
    ```
-4. Clique em **`Execute`**. 
-5. **Resultado Esperado:** O Swagger deve retornar o código **`201 Created`** com o ID único gerado para a transação. O lançamento foi persistido no SQL Server de forma segura.
+4. Clique em **`Execute`**.
+5. **Resultado Técnico Esperado:** Retorno HTTP **`201 Created`** contendo o ID exclusivo da transação gerado no SQL Server.
 
-### 2. Acompanhar a Mensageria nos Logs
-1. Olhe imediatamente para a tela do **Terminal 2 (API de Consolidado)**.
-2. **Resultado Esperado:** Você verá o log ser impresso na tela na mesma hora:
+### B. Confirmação do Processamento de Eventos (Logs)
+1. Inspecione imediatamente os logs ativos no **Terminal 2 (API de Consolidado)**.
+2. **Resultado Técnico Esperado:** O console deve registrar o recebimento e processamento bem-sucedido da mensagem enviada pelo RabbitMQ:
    ```text
-   [NOSQL SYNC] Saldo do dia 2026-08-19 atualizado em R$ 250,00 (ID: <ID-DA-TRANSACAO>).
+   [NOSQL SYNC] Saldo do dia 2026-08-20 atualizado em R$ 250,00 (ID: <ID-DA-TRANSACAO>).
    ```
-   Isso prova que o RabbitMQ transportou o evento de forma assíncrona e desacoplada em tempo de milissegundos!
+   *Evidência:* Isso comprova o funcionamento da arquitetura orientada a eventos (EDA) com integração assíncrona desacoplada em tempo de milissegundos.
 
-### 3. Consultar o Saldo Consolidado Diário (GET)
-1. No seu navegador, acesse o Swagger da **API de Consolidado**:
-   👉 URL: `http://localhost:<PORTA_DO_TERMINAL_2>/swagger/index.html` (substitua pela porta do Terminal 2, ex: `5254`).
-2. Clique no endpoint **`GET /api/consolidado/{data}`** -> clique em **`Try it out`**.
-3. No campo `data`, digite a data de hoje no formato `AAAA-MM-DD` (ex: `2026-08-19`) e clique em **`Execute`**.
-4. **Resultado Esperado:** O retorno trará o saldo totalizado:
+### C. Consulta do Saldo Consolidado Diário (GET)
+1. Acesse a interface Swagger da **API de Consolidado**:
+   👉 URL: `http://localhost:<PORTA_DO_TERMINAL_2>/swagger/index.html` (utilize a porta gerada no Terminal 2, por exemplo, `5254`).
+2. Selecione o endpoint **`GET /api/consolidado/{data}`** e clique em **`Try it out`**.
+3. Forneça o parâmetro da data corrente no formato `AAAA-MM-DD` (ex: `2026-08-20`) e clique em **`Execute`**.
+4. **Resultado Técnico Esperado:** Retorno HTTP **`200 OK`** com a resposta estruturada contendo o saldo totalizado e a origem de dados:
    ```json
    {
-     "data": "2026-08-19",
+     "data": "2026-08-20",
      "saldo": 250.00,
      "provedor": "MongoDB"
    }
    ```
-5. **Dica de Performance (Amortecimento de Carga):** Clique em **`Execute`** novamente várias vezes seguidas. Você verá no console o log `[CACHE HIT]`. Nas requisições repetidas, o sistema entrega o saldo direto da memória RAM (MemoryCache) em microssegundos, blindando o banco de dados contra quedas em picos de tráfego.
+5. **Validação do Cache Distribuído (SLO Optimization):** Submeta o comando **`Execute`** repetidas vezes. O console registrará o evento `[CACHE HIT]`. Nas requisições sequenciais, o serviço atende o endpoint diretamente do cache em memória (MemoryCache), poupando recursos e protegendo o MongoDB contra sobrecarga em cenários de alta concorrência.
 
 ---
 
-## ⚡ Passo 4: O Teste Supremo da Resiliência (Tolerância a Falhas)
+## ⚡ 4. Teste de Resiliência e Tolerância a Falhas
 
-Este passo é o principal critério para comprovar a maturidade arquitetural exigida pelo edital: **o serviço de controle de lançamentos não deve ficar indisponível caso o serviço de consolidado diário falhe.**
+Este teste valida o principal requisito não funcional do desafio técnico: **o serviço de controle de lançamentos deve permanecer operacional mesmo sob indisponibilidade temporária do serviço de consolidado ou do broker de mensageria.**
 
-1. Abra o seu **Docker Desktop** e clique em **"Stop"** (botão quadrado vermelho) apenas no container do **`rabbitmq_cloud`** para simular uma queda de infraestrutura de rede da fila.
-2. Volte ao Swagger da **API de Lançamentos** (Swagger 1) e tente realizar um novo POST de venda de **R$ 150,00**:
+1. Acesse o console do **Docker Desktop** (ou execute via CLI no terminal) e pare o container do broker:
+   ```bash
+   docker stop rabbitmq_cloud
+   ```
+2. Retorne à interface Swagger da **API de Lançamentos** e efetue um novo envio de transação (débito de **R$ 150,00**):
    ```json
    {
      "valor": 150.00,
-     "tipo": "C"
+     "tipo": "D"
    }
    ```
-3. **Resultado Esperado:** O POST retornará com sucesso **`201 Created`** e a venda será gravada normalmente no SQL Server!
-4. **Observe os Logs do Terminal 1:** O console exibirá um aviso amigável:
+3. **Resultado Técnico Esperado:** A chamada retorna sucesso com status **`201 Created`** e a transação é persistida localmente de forma soberana no SQL Server.
+4. **Comportamento nos Logs (Terminal 1):** O console registrará o tratamento de exceção com a mensagem:
    `[AVISO - RESILIÊNCIA] Falha ao publicar no RabbitMQ. Lançamento salvo soberanamente no SQL Server.`
-   Isso prova que a indisponibilidade do Consolidado/Fila não interrompe as vendas do lojista!
-5. No Docker Desktop, ligue o container do **`rabbitmq_cloud`** novamente (clique em "Start").
-6. Pare a API do Consolidado (Terminal 2) com `Ctrl + C` e inicie-a novamente com `dotnet run`.
-7. **Resultado de Consistência Eventual:** Assim que inicializar, o consumidor em segundo plano conectará, resgatará a mensagem que ficou guardada em segurança no disco e atualizará o saldo consolidado no MongoDB de forma automática para **R$ 400,00**!
+   *Evidência:* Isso comprova a alta disponibilidade da ponta de escrita e a total resiliência transacional do ecossistema.
+5. Reinicie o container do broker no Docker:
+   ```bash
+   docker start rabbitmq_cloud
+   ```
+6. Se necessário, reinicie a API do Consolidado (Terminal 2) para restabelecer o canal de consumo.
+7. **Consistência Eventual Garantida:** Ao restabelecer a conexão, o consumidor em segundo plano processará de forma retroativa as mensagens retidas de forma resiliente em disco na fila do RabbitMQ. O banco NoSQL (MongoDB) será atualizado de forma assíncrona, consolidando o saldo final do dia para **R$ 100,00** (R$ 250,00 de crédito menos R$ 150,00 de débito).
 
 ---
 
-## 🚦 Passo 5: Executar os Testes Automatizados (xUnit)
+## 🚦 5. Execução dos Testes Automatizados (Suite xUnit)
 
-Para rodar a bateria de testes unitários que blindam as regras de negócio de domínio (validação de valores maiores que zero e tipo de entrada válida C/D):
+O projeto inclui uma suite de testes automatizados focada na validação rigorosa das regras de domínio e consistência transacional do modelo.
 
-1. Pare as aplicações nos terminais (`Ctrl + C`).
-2. No seu terminal, garanta que está na pasta raiz (onde fica o arquivo `.sln`) e execute o comando:
+1. Encerre a execução das APIs nos terminais utilizando `Ctrl + C`.
+2. Certifique-se de que o terminal encontra-se no diretório raiz da solução (onde está localizado o arquivo `CashFlow.sln`).
+3. Execute o comando de testes do .NET CLI:
    ```bash
    dotnet test
    ```
-3. **Resultado Esperado:** O compilador executará as validações de caminhos felizes e de exceção programadas no projeto e exibirá em verde o sucesso com **100% dos testes passando**.
+4. **Resultado Técnico Esperado:** O runner do xUnit executará a cobertura das regras de domínio e validações lógicas, reportando sucesso com **100% dos testes passando** de forma limpa.
 
 ---
-*Este guia prova formalmente o atendimento integral de todos os requisitos funcionais e não funcionais do desafio técnico.*
+*Este documento comprova e formaliza o pleno atendimento a todos os requisitos funcionais e não funcionais estabelecidos no edital do desafio técnico.*
